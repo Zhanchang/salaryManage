@@ -37,7 +37,7 @@
         
         <!-- connection -->
         <property name="dataSource">
-             <ref local ="dataSource"/> 
+             <ref bean ="dataSource"/> 
         </property>
         
         <!-- hibernate自身属性  -->
