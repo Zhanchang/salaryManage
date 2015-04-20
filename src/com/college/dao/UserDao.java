@@ -11,7 +11,7 @@ import org.springframework.orm.hibernate3.HibernateTemplate;
 import com.college.model.User;
 public class UserDao {
 	private Session session;
-	private SessionFactory sf;
+	private SessionFactory sessionFactory;
 	private Transaction ts;
 	public void addUser(User user){
 		ts.begin();
@@ -41,8 +41,8 @@ public class UserDao {
 		return userList.get(0);
 	}
 
-	public void setSf(SessionFactory sf) {
-		this.sf = sf;
+	public void setSessionFactory(SessionFactory sf) {
+		this.sessionFactory = sf;
 		if(ts==null){
 			if(session==null)
 				session=sf.openSession();

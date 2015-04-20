@@ -53,7 +53,7 @@
         <!-- 映射文件 -->
         <property name="mappingResources">
             <list>
-              <value>com/du/domain/User.hbm.xml</value>
+              <value>com/college/model/User.hbm.xml</value>
             </list>
         </property>
     </bean>
@@ -61,14 +61,14 @@
     <!-- advice -->
     <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
         <property name="sessionFactory">
-<!--            <ref local="sessionFactory"/> -->
+            <ref bean="sessionFactory"/>
         </property>
     </bean>
     
     <!-- 事务处理 -->
     <bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
         <property name="transactionManager">
-<!--            <ref local="transactionManager"/> -->
+            <ref bean="transactionManager"/>
         </property>
         <property name="transactionAttributes">
            <props>
